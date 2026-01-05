@@ -38,7 +38,7 @@ The codebase follows a simple, consolidated architecture:
 
 ### Google Authentication Flow
 
-- OAuth2 client is configured in `src/google/googleClient.ts`
+- OAuth2 client is configured in `src/google.ts`
 - Credentials (CLIENT_ID, CLIENT_SECRET, REDIRECT_URI) are loaded from environment variables
 - Token is stored in `token.json` at project root (generated via `tokenGenerator` script)
 - Token auto-refresh is handled via the `oauth2Client.on('tokens')` event handler
@@ -73,10 +73,8 @@ src/
 ├── types.ts                 # Shared TypeScript interfaces
 ├── util.ts                  # Google Drive API interaction utilities
 ├── tools.ts                 # MCP tool registrations
-├── google/
-│   └── googleClient.ts      # OAuth2 client and Drive API setup
-└── scripts/
-    └── tokenGenerator.ts    # OAuth token generation script
+├── google.ts                # OAuth2 client and Drive API setup
+└── tokenGenerator.ts        # OAuth token generation script
 ```
 
 ## Adding New Tools

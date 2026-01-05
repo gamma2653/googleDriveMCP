@@ -1,5 +1,5 @@
 import { Folder, ListFoldersResponse, ListFilesResponse, ReturnFileResponse } from './types.js'
-import { drive } from './google/googleClient.js'
+import { drive } from './google.js'
 
 export const listAllFolders = async (): Promise<ListFoldersResponse> => {
   try {
